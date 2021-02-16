@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import react, { useState } from "react";
+import Movielist from "./Component/Movielist/Movielist";
+import Caar from "./Component/Carousel";
+import Nabar from "./Component/Nabar";
+import Search from "./Component/Search/Search";
+import Rat from "./Component/Search/Rat";
 
 function App() {
+  const [inputSearch, setInputSearch] = useState("");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nabar />
+      <h1 className="titrefilm">films</h1>
+      {/* <Caar /> */}
+      <Search setInputSearch={setInputSearch} />
+
+      <Movielist inputSearch={inputSearch} />
     </div>
   );
 }
