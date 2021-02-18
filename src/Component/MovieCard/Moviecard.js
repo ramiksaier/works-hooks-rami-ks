@@ -4,14 +4,14 @@ const Moviecard = ({ Addfilm }) => {
   const [title, settitle] = useState("");
   const [description, setdescription] = useState("");
   const [posterUrle, setposterUrle] = useState("");
-  const [Rate, setRate] = useState(0);
+  const [Rating, setRating] = useState(0);
   const handelSubmit = (e) => {
     e.preventDefault();
-    Addfilm(title, description, posterUrle, Rate);
+    Addfilm(title, description, posterUrle, Rating);
     settitle("");
     setdescription("");
     setposterUrle("");
-    setRate(0);
+    setRating(0);
   };
 
   return (
@@ -44,8 +44,10 @@ const Moviecard = ({ Addfilm }) => {
         className="inpu"
         type="text"
         placeholder="Rate your film..."
-        value={Rate}
-        onChange={(e) => setRate(e.target.value)}
+        value={Rating}
+        onChange={(e) => setRating(e.target.value)}
+        min="1"
+        max="5"
       ></input>
       <p></p>
       <button className="btnadd" onClick={() => Addfilm}>

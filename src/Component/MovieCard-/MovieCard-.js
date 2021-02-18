@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-import Ratec from "../Rate/rate";
+import Rater from "../Search/SearchbyRate";
 
 const MovieCardNew = ({ el, Addfilm, Deletefilm, i }) => {
   return (
@@ -19,6 +19,8 @@ const MovieCardNew = ({ el, Addfilm, Deletefilm, i }) => {
           <Card.Text>
             <p className="listaffichage">{el.description}</p>
           </Card.Text>
+          <Rater filterRate={false} movieRating={el.rating} />
+
           <Button
             onClick={() => Deletefilm(i)}
             className="listaffichage"
@@ -26,9 +28,7 @@ const MovieCardNew = ({ el, Addfilm, Deletefilm, i }) => {
           >
             Delete
           </Button>
-          <Card.Text>
-            <Ratec />
-          </Card.Text>
+          <Card.Text></Card.Text>
         </Card.Body>
       </Card>
     </div>

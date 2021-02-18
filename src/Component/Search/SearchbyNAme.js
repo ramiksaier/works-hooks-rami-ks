@@ -4,8 +4,9 @@ const Search = ({ setInputSearch }) => {
   return (
     <div>
       <input
+        placeholder="search your movie"
         type="text"
-        style={{ marginBottom: "10%" }}
+        style={{ marginBottom: "5%" }}
         onChange={(e) => setInputSearch(e.target.value)}
       />
     </div>
