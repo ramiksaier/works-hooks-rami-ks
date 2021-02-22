@@ -1,12 +1,3 @@
-.App {
-  text-align: center;
-  background: url("https://i.pinimg.com/originals/44/6e/3b/446e3b79395a287ca32f7977dd83b290.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-color: black;
-}
-
 .titrefilm {
   color: black;
   font-size: 150px;
@@ -102,4 +93,27 @@
 .searching {
   display: flex;
   justify-content: center;
+}
+.changcolor {
+  color: #7b38d8;
+  font-style: italic;
+  font-weight: 100;
+}
+.bigtitle {
+  font-size: 100px;
+  text-shadow: -1px -1px #f00, 1px 1px #a00, -3px 0 4px #000;
+  font-family: "Segoe print", Arial, Helvetica, sans-serif;
+  color: #dd0000;
+  padding: 64px 0 0 0;
+  margin: 100px auto;
+  font-weight: lighter;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-align: center;
+  display: block;
+  min-height: 172px;
+  min-width: 800;
+  max-height: 172px;
+  max-width: 800px;
 }

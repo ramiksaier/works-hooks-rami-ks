@@ -5,24 +5,28 @@ import Nabar from "./Component/Nabar";
 import Search from "./Component/Search/SearchbyNAme";
 import Rater from "./Component/Search/SearchbyRate";
 import Footer from "./Component/Footer/Footer";
-
-function App() {
+import { Route, Router, Switch } from "react-router-dom";
+import Errors from "./Component/Eroors";
+import Moviedetail from "./Component/Moviedetail";
+import Moviecard from "./Component/MovieCard/Moviecard";
+import Homepage from "./Component/Homepage";
+function App({ Addmovie }) {
   const [inputSearch, setInputSearch] = useState("");
   const [rating, setRating] = useState(1);
 
   return (
     <div className="App">
       <Nabar />
-      <h1 className="titrefilm">films</h1>
+      <div className="searching"></div>
 
-      <div className="searching">
-        <Search setInputSearch={setInputSearch} />
-        <Rater filterRate={true} rating={rating} setRating={setRating} />
-      </div>
-      <Movielist inputSearch={inputSearch} rating={rating} />
+      <Switch>
+        <Route exact path="/" component={Homepage} />
+        <Route path="/movilist" component={Movielist} />
+        <Route path="/mov" component={Moviedetail} />
+        <Route path="*/" component={Errors} />
+      </Switch>
       <br></br>
       <br></br>
-      <Footer />
     </div>
   );
 }

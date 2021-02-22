@@ -1,13 +1,17 @@
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import MovieCardNew from "../MovieCard-/MovieCard-";
 import Moviecard from "../MovieCard/Moviecard";
 import Rater from "../Search/SearchbyRate";
+import Search from "../Search/SearchbyNAme";
+import Footer from "../Footer/Footer";
 
-const Movielist = ({ inputSearch, setRating, rating }) => {
+const Movielist = ({}) => {
   const [film, setfilm] = useState([
     {
       title: "docteur",
-      description: "This is the first film",
+      description: "action film creé en 2019",
       posterUrle:
         "https://cinehorizons.net/sites/default/files/affiches/839799465-docteur.jpg",
       rating: 1,
@@ -49,6 +53,8 @@ const Movielist = ({ inputSearch, setRating, rating }) => {
     },
   ]);
 
+  const [inputSearch, setInputSearch] = useState("");
+  const [rating, setRating] = useState(1);
   const Addfilm = (title, description, posterUrle, rating) => {
     setfilm([...film, { title, description, posterUrle, rating }]);
   };
@@ -59,13 +65,18 @@ const Movielist = ({ inputSearch, setRating, rating }) => {
 
   return (
     <div>
+      <h1 className="titrefilm">films</h1>
+
+      <Search setInputSearch={setInputSearch} />
+      <Rater filterRate={true} rating={rating} setRating={setRating} />
+
       <Moviecard Addfilm={Addfilm} />
 
       <div className="affichage">
         {film
           .filter(
             (movie) =>
-              movie.title.toLowerCase().includes(inputSearch.toLowerCase()) &&
+              movie.title.toUpperCase().includes(inputSearch.toUpperCase()) &&
               movie.rating >= rating
           )
 
@@ -79,6 +90,7 @@ const Movielist = ({ inputSearch, setRating, rating }) => {
             />
           ))}
       </div>
+      <Footer />
     </div>
   );
 };

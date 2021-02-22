@@ -53,6 +53,7 @@ const Moviecard = ({ Addfilm }) => {
       <button className="btnadd" onClick={() => Addfilm}>
         add
       </button>
+      
     </form>
   );
 };

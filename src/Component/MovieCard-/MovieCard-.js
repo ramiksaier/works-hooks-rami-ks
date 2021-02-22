@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import Rater from "../Search/SearchbyRate";
 
@@ -28,6 +29,9 @@ const MovieCardNew = ({ el, Addfilm, Deletefilm, i }) => {
           >
             Delete
           </Button>
+          <Link to={{ pathname: "/mov", state: { el: el } }}>
+            <Button>see detail</Button>
+          </Link>
           <Card.Text></Card.Text>
         </Card.Body>
       </Card>
